@@ -428,7 +428,7 @@ body::after {
   width: 100%;
   top: 0;
   left: 0;
-  padding-top: 5.4375rem;
+  padding-top: 4.375rem;
   padding-bottom: 4rem;
 }
 
@@ -436,12 +436,15 @@ body::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.header__logo {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
 }
 
 .header__logo-image {
@@ -463,6 +466,9 @@ body::after {
   font-weight: 700;
   font-size: 1.5625rem;
   line-height: 1.4;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .menu__item:nth-child(2) {
