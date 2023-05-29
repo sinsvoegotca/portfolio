@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230419205030">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230529114205">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,13 +17,13 @@
 		<header class="header">
 			<div class="header__container">
 				<div class="header__body">
-					<a href="" class="header__logo-image"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt=""></picture></a>
+					<a href="" class="header__logo-image"><img src="img/logo.svg" alt=""></a>
 					<div class="header__menu menu">
 						<nav class="menu__body">
 							<ul class="menu__list">
 								<li class="menu__item"><a href="users.html" class="menu__link">Главная</a></li>
-								<li class="menu__item"><a href="" data-popup="#popup" class="menu__link">Войти</a></li>
-								<li class="menu__item"><a href="" data-popup="#popup_1" class="menu__link">Регистрация</a></li>
+								<li class="menu__item"><a href="" data-popup="#popup" class="menu__link menu__link_gray">Войти</a></li>
+								<li class="menu__item"><a href="" data-popup="#popup_1" class="menu__link menu__link_gray">Регистрация</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -149,16 +149,18 @@
 	<div id="popup" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content">
-				<button data-close type="button" class="popup__close">Закрыть</button>
+				<button data-close type="button" class="popup__close"><img class="popup__close-image" src="img/popup/close.svg" alt=""></button>
 				<div class="popup__body">
 					<div class="popup__title">
-						Вход
+						Вход в аккаунт
 					</div>
 					<div class="popup__forms forms-popup">
-						<div class="forms-popup__mail"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Почта" class="input"></div>
-						<div class="forms-popup__ps forms-popup__ps_pb"><input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="Пароль" class="input"></div>
+						<div class="forms-popup__inp forms-popup__mail _icon-dot"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Логин / Электронная почта" class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__password _icon-dot"><input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="Пароль" class="forms-popup__input input"></div>
 					</div>
-					<button type="submit" class="button">Авторизоваться</button>
+					<div class="popup__link-reg">Если у вас нет аккаунта, <a href="" data-popup="#popup_1">зарегестрируйтесь</a>
+					</div>
+					<button type="submit" class="popup__button">Авторизоваться</button>
 				</div>
 			</div>
 		</div>
@@ -167,24 +169,54 @@
 	<div id="popup_1" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content">
-				<button data-close type="button" class="popup__close">Закрыть</button>
+				<button data-close type="button" class="popup__close"><img class="popup__close-image" src="img/popup/close.svg" alt=""></button>
 				<div class="popup__body">
 					<div class="popup__title">
-						Регистрация
+						Регистрация с помощью адреса электронной почты
 					</div>
 					<div class="popup__forms forms-popup">
-						<div class="forms-popup__mail"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Почта" class="input"></div>
-						<div class="forms-popup__ps"><input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="Пароль" class="input"></div>
-						<div class="forms-popup__psr"><input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="Повторите пароль" class="input"></div>
-						<div class="forms-popup__name"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" class="input"></div>
-						<div class="forms-popup__surname"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Фамилия" class="input"></div>
+						<div class="forms-popup__inp forms-popup__login _icon-dot"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Логин / Юзернейм" class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__mail _icon-dot"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Электронная почта" class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__password _icon-dot"><input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="Пароль" class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__repeat-password _icon-dot"><input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="Повторите пароль" class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__name _icon-dot"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__surname _icon-dot"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Фамилия" class="forms-popup__input input"></div>
 					</div>
-					<button type="submit" class="button">Зарегистрироваться</button>
+					<button type="submit" class="popup__button">Зарегистрироваться</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230419205030"></script>
+
+
+
+
+	<div id="popup__2" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content popup__content_one-more">
+				<button data-close type="button" class="popup__close popup__close_small"><img class="popup__close-image popup__close-image_small" src="img/popup/close.svg" alt=""></button>
+				<div class="popup__body-ptoject">
+					<div class="popup__title">Добавить проект</div>
+					<div class="popup__block-items">
+						<div class="popup__icons-block">
+							<div class="popup__icons-title">Платформа</div>
+							<div class="popup__icon-block">
+								<button type="button" class="popup__icon popup__icon_1"><img src="img/icons/fox-big.svg" alt=""></button>
+								<button type="button" class="popup__icon popup__icon_2"><img src="img/icons/item-big.svg" alt=""></button>
+								<button type="button" data-watch class="popup__icon popup__icon_3"><img src="img/icons/cat-big.svg" alt=""></button>
+								<button type="button" class="popup__icon popup__icon_4"><img src="img/icons/fig-big.svg" alt=""></button>
+							</div>
+						</div>
+						<div class="popup__project">
+							<div class="popup__name-project "><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Название проекта" class="popup__project-name input"></div>
+							<div class="popup__name-project"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Название проекта" class="popup__project-link input"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230529114205"></script>
 </body>
 
 </html>
