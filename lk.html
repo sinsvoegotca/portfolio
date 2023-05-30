@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230530010839">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230531013010">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,12 +17,12 @@
 		<header class="header">
 			<div class="header__container">
 				<div class="header__body">
-					<a href="" class="header__logo-image"><img src="img/logo.svg" alt=""></a>
+					<a href="home.html" class="header__logo-image"><img src="img/logo.svg" alt=""></a>
 					<div class="header__menu menu">
 						<nav class="menu__body">
 							<ul class="menu__list">
-								<li class="menu__item"><a href="" class="menu__link">Главная</a></li>
-								<li class="menu__item"><a href="" data-popup="#popup" class="menu__link menu__link_gray">Вход</a></li>
+								<li class="menu__item"><a href="home.html" class="menu__link">Главная</a></li>
+								<li class="menu__item"><a href="" data-popup="#popup" class="menu__link menu__link_gray">Войти</a></li>
 								<li class="menu__item"><a href="" data-popup="#popup_1" class="menu__link menu__link_gray">Регистрация</a></li>
 							</ul>
 						</nav>
@@ -54,7 +54,7 @@
 							</div>
 							<div class="personal-account__info">
 								<div class="personal-account__name">
-									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ваше ФИО" class="personal-account__input personal-account__input_name input">
+									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ваше Имя и Фамилия" class="personal-account__input personal-account__input_name input">
 								</div>
 								<div class="personal-account__my-skills">
 									<textarea class="personal-account__input personal-account__input_text" placeholder="Кратко о вас" name="" id="" cols="30" rows="10"></textarea>
@@ -75,16 +75,16 @@
 						</div>
 						<div class="personal-account__about-me-items">
 							<div class="personal-account__skils">
-								<textarea class="personal-account__textarea" placeholder="Расскажите более подробно о себе 
+								<textarea class="personal-account__input personal-account__textarea" placeholder="Расскажите более подробно о себе 
 - Ваши навыки?                                                       -Почему нужны именно вы?                                              - Опыт работы в командах?" name="" id="" cols="30" rows="10"></textarea>
 							</div>
 							<div class="personal-account__my-contacts">
 								<div class="personal-account__yours-contacts">Ваши контакты</div>
 								<div class="personal-account__inp">
-									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ваш Telergarm" class="personal-account__tg-inp input">
+									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ваш Telergarm" class="personal-account__contact personal-account__tg-inp input">
 								</div>
 								<div class="personal-account__inp">
-									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ваш номер телефона" class="personal-account__number-inp input">
+									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ваш номер телефона" class="personal-account__contact personal-account__number-inp input">
 								</div>
 								<button type="submit" class="personal-account__btn button">Сохранить</button>
 							</div>
@@ -171,25 +171,17 @@
 				<div class="popup__body-ptoject">
 					<div class="popup__title">Добавить проект</div>
 					<div class="popup__block-items">
-						<div class="popup__icons-block">
-							<div class="popup__icons-title">Платформа</div>
-							<div class="popup__icon-block">
-								<button type="button" class="popup__icon popup__icon_1"><img src="img/icons/fox-big.svg" alt=""></button>
-								<button type="button" class="popup__icon popup__icon_2"><img src="img/icons/item-big.svg" alt=""></button>
-								<button type="button" data-watch class="popup__icon popup__icon_3"><img src="img/icons/cat-big.svg" alt=""></button>
-								<button type="button" class="popup__icon popup__icon_4"><img src="img/icons/fig-big.svg" alt=""></button>
-							</div>
-						</div>
 						<div class="popup__project">
-							<div class="popup__name-project "><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Название проекта" class="popup__project-name input"></div>
-							<div class="popup__name-project"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Название проекта" class="popup__project-link input"></div>
+							<div class="popup__name-project "><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Название проекта" class="popup__project-item popup__project-name input"></div>
+							<div class="popup__name-project"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ссылка на проект" class="popup__project-item popup__project-link input"></div>
 						</div>
 					</div>
+					<div class="popup__btn-save"><button type="submit" class="popup__btn-item button">Сохранить</button></div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230530010839"></script>
+	<script src="js/app.min.js?_v=20230531013010"></script>
 </body>
 
 </html>

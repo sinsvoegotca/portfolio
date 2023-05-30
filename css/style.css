@@ -478,6 +478,9 @@ body::after {
 }
 
 .popup__block-items {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -532,13 +535,29 @@ body::after {
 .popup__project-name {
   background: #454D5C;
   border-radius: 0.75rem;
-  padding: 0.625rem 1.25rem;
+  padding: 0.625rem 0.625rem;
+  width: 100%;
 }
 
 .popup__project-link {
   background: #454D5C;
   border-radius: 0.75rem;
-  padding: 0.625rem 1.25rem;
+  padding: 0.625rem 0.625rem;
+}
+
+.popup__btn-save {
+  margin-top: 1.875rem;
+  text-align: center;
+}
+
+.popup__btn-save button {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(245, 61, 51, 0.7)), to(rgba(248, 119, 92, 0.7)));
+  background: -o-linear-gradient(left, rgba(245, 61, 51, 0.7) 0%, rgba(248, 119, 92, 0.7) 100%);
+  background: linear-gradient(90deg, rgba(245, 61, 51, 0.7) 0%, rgba(248, 119, 92, 0.7) 100%);
+}
+
+.popup__project-item {
+  color: #eee;
 }
 
 [class*=-ibg] {
@@ -848,6 +867,7 @@ body::after {
   background-color: #fff;
   border-radius: 0.625rem;
   margin-top: 0.75rem;
+  width: 31.25rem;
 }
 
 .page__body {
@@ -1002,7 +1022,8 @@ body::after {
 
 .form__input {
   border-radius: 0.625rem;
-  padding: 0.625rem 9.375rem 0.625rem 1.25rem;
+  padding: 0.625rem 1.25rem 0.625rem 1.25rem;
+  width: 100%;
 }
 
 .personal-account {
@@ -1072,8 +1093,8 @@ body::after {
 }
 
 .personal-account__input_name {
-  padding: 1.5625rem 1.875rem;
-  width: 46.875rem;
+  padding: 1.5625rem 0.625rem;
+  width: 100%;
 }
 
 .personal-account__input_text {
@@ -1154,6 +1175,7 @@ body::after {
 }
 
 .personal-account__project {
+  margin-top: 0.625rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
