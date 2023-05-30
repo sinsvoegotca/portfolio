@@ -1266,36 +1266,27 @@
             console.log(linkProject);
             console.log(uploadedFiles);
         });
-        const saveProject = document.querySelector(".popup__btn-item");
-        const nameAndLink = document.querySelectorAll(".popup__project-item");
-        saveProject.addEventListener("click", function (e) {
-            console.log(nameAndLink);
-        });
-        const textareaElement = document.querySelector(
-            ".personal-account__input_text"
-        );
-        textareaElement.value = "мини рассказ о себе какое вы дерьмо";
-        const textareaElement2 = document.querySelector(
-            ".personal-account__textarea"
-        );
-        textareaElement2.value = "Расскажите о том какой вы дерьмовый ублюдок";
-        const ipuntElement = document.querySelector(
-            ".personal-account__input_name"
-        );
-        ipuntElement.value = "Боже спаси и помоги";
-        const ipuntElement1 = document.querySelector(
-            ".personal-account__tg-inp"
-        );
-        ipuntElement1.value = "123123123";
-        const ipuntElement2 = document.querySelector(
-            ".personal-account__number-inp"
-        );
-        ipuntElement2.value = "123123123";
-        const ipuntElement3 = document.querySelector(".popup__project-name");
-        ipuntElement3.value = "Название говна";
-        const ipuntElement4 = document.querySelector(".popup__project-link");
-        ipuntElement4.value = "Ссылка на гавно";
-        console.log(2);
+        if (document.querySelector(".personal-account__input_text")) {
+            const h = document.querySelector(".popup__btn-item"),
+                f = document.querySelectorAll(".popup__project-item");
+            h.addEventListener("click", function (t) {
+                console.log(f);
+            });
+            document.querySelector(".personal-account__input_text").value =
+                "мини рассказ о себе какое вы дерьмо";
+            document.querySelector(".personal-account__textarea").value =
+                "Расскажите о том какой вы дерьмовый ублюдок";
+            document.querySelector(".personal-account__input_name").value =
+                "Боже спаси и помоги";
+            document.querySelector(".personal-account__tg-inp").value =
+                "123123123";
+            document.querySelector(".personal-account__number-inp").value =
+                "123123123";
+            document.querySelector(".popup__project-name").value =
+                "Название говна";
+            document.querySelector(".popup__project-link").value =
+                "Ссылка на гавно";
+        }
 
         window["FLS"] = true;
         isWebp();
@@ -1320,6 +1311,7 @@ document.querySelector(".auth__button")?.addEventListener("click", async () => {
     console.log(response);
     if (!response.code) {
         localStorage.setItem("token", response.token);
+        location.reload();
     } else alert(response.message);
 });
 
@@ -1365,6 +1357,7 @@ document
         console.log(response);
         if (!response.code) {
             localStorage.setItem("token", response.token);
+            location.reload();
         } else alert(response.message);
     });
 
@@ -1385,7 +1378,8 @@ function renderUsers(users) {
         linkPersonImage.appendChild(pageImage);
 
         const image = document.createElement("img");
-        image.src = "";
+        console.log(user);
+        image.src = "http://localhost/public/" + user.photo;
         image.alt = "";
         pageImage.appendChild(image);
 
@@ -1625,5 +1619,66 @@ if (/user\.html/i.test(location.pathname)) {
                 newCard.appendChild(newLink);
                 contentBlock.appendChild(newCard);
             });
+        });
+}
+
+if (/lk\.html/i.test(location.pathname)) {
+    const form = document.querySelector("form");
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+        const a = document.querySelector(
+            "body > div.wrapper > main > div > div > form > div.personal-account__about-me > div.personal-account__photo > input"
+        );
+
+        formData.append("avatar", a.files[0]);
+        const shortText = document.querySelector("#message");
+        formData.append("shortDescription", shortText.value);
+
+        const fullText = document.querySelector("#skills");
+        formData.append("fullDescription", fullText.value);
+
+        const tg = document.querySelector("#telegram");
+        formData.append("tg", tg.value);
+
+        const phone = document.querySelector("#phone");
+        formData.append("phone", phone.value);
+
+        const response = await fetch("http://localhost/user/", {
+            method: "POST",
+            headers: {
+                authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            body: formData,
+        }).then((res) => res.json());
+        console.log(response);
+        if (!response.code) {
+            alert("Успешно загружено");
+        } else alert(response.message);
+    });
+
+    fetch(`http://localhost/user/`, {
+        headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+    })
+        .then((res) => res.json())
+        .then((user) => {
+            console.log(user);
+            if (user?.code) return alert(user.message);
+            document.querySelector(".personal-account__input_text").value =
+                user.shortDescription;
+            document.querySelector(".personal-account__textarea").value =
+                user.fullDescription;
+            document.querySelector(".personal-account__input_name").value =
+                user.lastName + " " + user.firstName;
+            document.querySelector(".personal-account__tg-inp").value =
+                user.contacts.tg || "";
+            document.querySelector(".personal-account__number-inp").value =
+                user.contacts.phone || "";
+            // document.querySelector(".popup__project-name").value =
+            //     "Название говна";
+            // document.querySelector(".popup__project-link").value =
+            //     "Ссылка на гавно";
         });
 }
