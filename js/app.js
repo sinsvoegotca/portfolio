@@ -1259,27 +1259,6 @@
         );
         const linkProject = document.querySelector(".personal-account__link");
         const uploadedFiles = document.querySelectorAll(".example__input");
-        if (document.querySelector(".personal-account__input_text")) {
-            const h = document.querySelector(".popup__btn-item"),
-                f = document.querySelectorAll(".popup__project-item");
-            h.addEventListener("click", function (t) {
-                console.log(f);
-            });
-            document.querySelector(".personal-account__input_text").value =
-                "мини рассказ о себе какое вы дерьмо";
-            document.querySelector(".personal-account__textarea").value =
-                "Расскажите о том какой вы дерьмовый ублюдок";
-            document.querySelector(".personal-account__input_name").value =
-                "Боже спаси и помоги";
-            document.querySelector(".personal-account__tg-inp").value =
-                "123123123";
-            document.querySelector(".personal-account__number-inp").value =
-                "123123123";
-            document.querySelector(".popup__project-name").value =
-                "Название говна";
-            document.querySelector(".popup__project-link").value =
-                "Ссылка на гавно";
-        }
         window["FLS"] = true;
         isWebp();
     })();
@@ -1290,7 +1269,7 @@ document.querySelector(".auth__button")?.addEventListener("click", async () => {
     const password = document.querySelector(
         ".forms-popup__password > input"
     ).value;
-    const response = await fetch("http://localhost/user/signIn", {
+    const response = await fetch("http://zkno.ru:3070/user/signIn", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -1323,7 +1302,6 @@ document
         const repeatPassword = document.querySelector(
             ".forms-popup__repeat-password > input"
         ).value;
-        alert(password + "$$$$" + repeatPassword);
         console.log(password, repeatPassword);
         if (password !== repeatPassword)
             return alert("Введённые пароли не совпадают");
@@ -1333,7 +1311,7 @@ document
         const lastName = document.querySelector(
             ".forms-popup__surname > input"
         ).value;
-        const response = await fetch("http://localhost/user/signUp", {
+        const response = await fetch("http://zkno.ru:3070/user/signUp", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -1371,7 +1349,7 @@ function renderUsers(users) {
 
         const image = document.createElement("img");
         console.log(user);
-        image.src = "http://localhost/public/" + user.photo;
+        image.src = "http://zkno.ru:3070/public/" + user.photo;
         image.alt = "";
         pageImage.appendChild(image);
 
@@ -1410,63 +1388,27 @@ function renderUsers(users) {
         const blockItems = document.createElement("div");
         blockItems.classList.add("page__block-items");
 
-        const linkPersonItem1 = document.createElement("a");
-        linkPersonItem1.classList.add("page__link-person");
-        linkPersonItem1.href = "";
+        user.works.forEach((work) => {
+            const linkPersonItem1 = document.createElement("a");
+            linkPersonItem1.classList.add("page__link-person");
+            linkPersonItem1.href = work.link;
 
-        const project1 = document.createElement("div");
-        project1.classList.add("page__project");
+            const project1 = document.createElement("div");
+            project1.classList.add("page__project");
 
-        const linkPersonProject1 = document.createElement("a");
-        linkPersonProject1.classList.add("page__link-person");
-        linkPersonProject1.href = "";
+            const linkPersonProject1 = document.createElement("a");
+            linkPersonProject1.classList.add("page__link-person");
+            linkPersonProject1.href = work.link;
+            const projectItem = document.createElement("a");
+            projectItem.classList.add("page__project-item");
+            projectItem.href = work.link;
+            projectItem.textContent = work.name;
 
-        const projectIcon1 = document.createElement("div");
-        projectIcon1.classList.add(
-            "page__project-icon",
-            "page__project-icon_1"
-        );
-
-        const imageIcon1 = document.createElement("img");
-        imageIcon1.src = "img/icons/figma.svg";
-        imageIcon1.alt = "";
-        projectIcon1.appendChild(imageIcon1);
-
-        linkPersonProject1.appendChild(projectIcon1);
-
-        const projectItem1 = document.createElement("a");
-        projectItem1.classList.add("page__project-item");
-        projectItem1.href = "";
-        projectItem1.textContent = "Дизайн сайта-портфолио";
-
-        linkPersonItem1.appendChild(linkPersonProject1);
-        linkPersonItem1.appendChild(projectItem1);
-        project1.appendChild(linkPersonItem1);
-
-        const project2 = document.createElement("div");
-        project2.classList.add("page__project");
-
-        const projectIcon2 = document.createElement("div");
-        projectIcon2.classList.add(
-            "page__project-icon",
-            "page__project-icon_2"
-        );
-
-        const imageIcon2 = document.createElement("img");
-        imageIcon2.src = "img/icons/artstation.svg";
-        imageIcon2.alt = "";
-        projectIcon2.appendChild(imageIcon2);
-
-        const projectItem2 = document.createElement("a");
-        projectItem2.classList.add("page__project-item");
-        projectItem2.href = "";
-        projectItem2.textContent = "Логотипы для компаний";
-
-        project2.appendChild(projectIcon2);
-        project2.appendChild(projectItem2);
-
-        blockItems.appendChild(linkPersonItem1);
-        blockItems.appendChild(project2);
+            linkPersonItem1.appendChild(linkPersonProject1);
+            linkPersonItem1.appendChild(projectItem);
+            project1.appendChild(linkPersonItem1);
+            blockItems.appendChild(project1);
+        });
 
         itemProjects.appendChild(blockItems);
 
@@ -1497,7 +1439,7 @@ function renderUsers(users) {
 }
 
 if (/home\.html/i.test(location.pathname)) {
-    fetch(`http://localhost/user/list?`, {
+    fetch(`http://zkno.ru:3070/user/list?`, {
         headers: {
             authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -1518,7 +1460,7 @@ if (/home\.html/i.test(location.pathname)) {
                 element.remove();
             });
             fetch(
-                `http://localhost/user/list${
+                `http://zkno.ru:3070/user/list${
                     !e.target.value.length ? "" : `?query=${e.target.value}`
                 }`,
                 {
@@ -1540,7 +1482,7 @@ if (/home\.html/i.test(location.pathname)) {
 
 if (/user\.html/i.test(location.pathname)) {
     fetch(
-        `http://localhost/user/${
+        `http://zkno.ru:3070/user/${
             location.search.length ? location.search.slice(1) : ""
         }`,
         {
@@ -1585,6 +1527,7 @@ if (/user\.html/i.test(location.pathname)) {
             );
 
             user.photoWorks.forEach((work) => {
+                console.log(work);
                 const contentBlock = document.querySelector(".projects__cards");
 
                 // Создаем новый элемент div
@@ -1601,11 +1544,10 @@ if (/user\.html/i.test(location.pathname)) {
 
                 // Создаем новый элемент img
                 const newImage = document.createElement("img");
-                newImage.src = work;
+                newImage.src = "http://zkno.ru:3070/public/" + work;
                 newImage.alt = "";
 
                 // Добавляем элементы в DOM
-                newPicture.appendChild(newSource);
                 newPicture.appendChild(newImage);
                 newLink.appendChild(newPicture);
                 newCard.appendChild(newLink);
@@ -1614,8 +1556,93 @@ if (/user\.html/i.test(location.pathname)) {
         });
 }
 
+function renderLKworks(works) {
+    const content = document.querySelector(".examples__body");
+    works.forEach((work) => {
+        const exampleDiv2 = document.createElement("div");
+        exampleDiv2.classList.add("example__img");
+        const uploadedImg = document.createElement("img");
+        uploadedImg.src = "http://zkno.ru:3070/public/" + work;
+        uploadedImg.id = "uploadedImg";
+
+        exampleDiv2.appendChild(uploadedImg);
+        content.insertBefore(exampleDiv2, content.firstChild);
+    });
+
+    const exampleDiv = document.createElement("div");
+    exampleDiv.classList.add("examples__example", "example");
+
+    const exampleImg = document.createElement("img");
+    exampleImg.src = "img/icons/add-big.svg";
+    exampleImg.alt = "";
+    const iconDiv = document.createElement("div");
+    iconDiv.classList.add("example__icon");
+    iconDiv.appendChild(exampleImg);
+    exampleDiv.appendChild(iconDiv);
+
+    const exampleInput = document.createElement("input");
+    exampleInput.type = "file";
+    exampleInput.name = "example1";
+    exampleInput.setAttribute("autocomplete", "off");
+    exampleInput.setAttribute("data-error", "Ошибка");
+    exampleInput.placeholder = "";
+    exampleInput.classList.add("example__input", "input");
+
+    exampleInput.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const exampleDiv2 = document.createElement("div");
+            exampleDiv2.classList.add("example__img");
+            const uploadedImg = document.createElement("img");
+            uploadedImg.src = e.target.result;
+            uploadedImg.id = "uploadedImg";
+
+            exampleDiv2.appendChild(uploadedImg);
+            content.insertBefore(exampleDiv2, content.firstChild);
+        };
+
+        reader.readAsDataURL(file);
+    });
+    exampleDiv.appendChild(exampleInput);
+
+    content.appendChild(exampleDiv);
+}
+
 if (/lk\.html/i.test(location.pathname)) {
-    const form = document.querySelector("form");
+    const form2 = document.querySelector("#popup__2 > div > div > form");
+    console.log(form2);
+    form2.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.querySelector(
+            "#popup__2 > div > div > form > div.popup__block-items > div > div:nth-child(1) > input"
+        );
+        const link = document.querySelector(
+            "#popup__2 > div > div > form > div.popup__block-items > div > div:nth-child(2) > input"
+        );
+        const projectDiv = document.createElement("div");
+        projectDiv.classList.add("personal-account__project");
+
+        const projectLink = document.createElement("a");
+        projectLink.href = link.value;
+        projectLink.classList.add("personal-account__link");
+        projectLink.textContent = name.value;
+        projectDiv.appendChild(projectLink);
+
+        const container = document.querySelector(
+            "body > div.wrapper > main > div > div > form > div.personal-account__about-me > div.personal-account__my-projects"
+        );
+        console.log(container);
+        container.insertBefore(
+            projectDiv,
+            document.querySelector(".personal-account__add-icon")
+        );
+    });
+
+    const form = document.querySelector(
+        "body > div.wrapper > main > div > div > form"
+    );
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
         const formData = new FormData();
@@ -1623,7 +1650,7 @@ if (/lk\.html/i.test(location.pathname)) {
             "body > div.wrapper > main > div > div > form > div.personal-account__about-me > div.personal-account__photo > input"
         );
 
-        formData.append("avatar", a.files[0]);
+        if (a.files[0]) formData.append("avatar", a.files[0]);
         const shortText = document.querySelector("#message");
         formData.append("shortDescription", shortText.value);
 
@@ -1635,8 +1662,47 @@ if (/lk\.html/i.test(location.pathname)) {
 
         const phone = document.querySelector("#phone");
         formData.append("phone", phone.value);
+        const name = document.querySelector("#name");
+        formData.append("name", name.value);
+        const photoWorks = Array.from(
+            document.querySelectorAll("#uploadedImg")
+        );
+        console.log(photoWorks);
+        await Promise.all(
+            photoWorks
+                .filter((work) => !work.currentSrc.startsWith("http:"))
+                .map(async (work) => {
+                    const canvas = document.createElement("canvas");
+                    const ctx = canvas.getContext("2d");
 
-        const response = await fetch("http://localhost/user/", {
+                    canvas.width = work.naturalWidth;
+                    canvas.height = work.naturalHeight;
+
+                    ctx.drawImage(work, 0, 0);
+                    await new Promise((resolve) => {
+                        canvas.toBlob(
+                            (blob) => {
+                                formData.append("work", blob, "image.jpg");
+                                resolve();
+                                console.log(1);
+                            },
+                            "image/jpeg",
+                            0.8
+                        );
+                    });
+                })
+        );
+        const works = Array.from(
+            document.querySelectorAll(
+                "body > div.wrapper > main > div > div > form > div.personal-account__about-me > div.personal-account__my-projects > div.personal-account__project > a"
+            )
+        ).map((work) => {
+            console.log(work.attributes);
+            return { name: work.textContent, link: work.attributes.href.value };
+        });
+        console.log(works);
+        formData.append("works", JSON.stringify(works));
+        const response = await fetch("http://zkno.ru:3070/user/", {
             method: "POST",
             headers: {
                 authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -1649,7 +1715,7 @@ if (/lk\.html/i.test(location.pathname)) {
         } else alert(response.message);
     });
 
-    fetch(`http://localhost/user/`, {
+    fetch(`http://zkno.ru:3070/user/`, {
         headers: {
             authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -1672,5 +1738,37 @@ if (/lk\.html/i.test(location.pathname)) {
             //     "Название говна";
             // document.querySelector(".popup__project-link").value =
             //     "Ссылка на гавно";
+            renderLKworks(user.photoWorks);
+            user.works.forEach((work) => {
+                const projectDiv = document.createElement("div");
+                projectDiv.classList.add("personal-account__project");
+
+                const projectLink = document.createElement("a");
+                projectLink.href = work.link;
+                projectLink.classList.add("personal-account__link");
+                projectLink.textContent = work.name;
+                projectDiv.appendChild(projectLink);
+
+                const container = document.querySelector(
+                    ".personal-account__my-projects"
+                );
+                container.insertBefore(
+                    projectDiv,
+                    document.querySelector(".personal-account__add-icon")
+                );
+            });
         });
+
+    fileInput.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            uploadedImg.src = e.target.result;
+            fileInput.style.display = "none";
+            uploadLabel.style.display = "none";
+        };
+
+        reader.readAsDataURL(file);
+    });
 }

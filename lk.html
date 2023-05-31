@@ -79,10 +79,7 @@
 								<div class="personal-account__header">
 									<h3>Ваши работы</h3>
 								</div>
-								<div class="personal-account__project">
-									<div class="personal-account__icon"><img src="img/icons/figma.svg" alt=""></div>
-									<a href="" class="personal-account__link">Дизайн сайта-портфолио</a>
-								</div>
+
 								<div class="personal-account__add-icon">
 									<a href="" data-popup="#popup__2" class="personal-account__item-icon"><img
 											src="img/icons/add.svg" alt=""></a>
@@ -110,21 +107,7 @@
 						<div class="personal-account__examples examples">
 							<div class="examples__title">Примеры работ</div>
 							<div class="examples__body">
-								<div class="examples__example example">
-									<div class="example__icon"><img src="img/icons/add-big.svg" alt=""></div> <input
-										autocomplete="off" type="file" name="example1" data-error="Ошибка"
-										placeholder="" class="example__input input">
-								</div>
-								<div class="examples__example example">
-									<div class="example__icon"><img src="img/icons/add-big.svg" alt=""></div> <input
-										autocomplete="off" type="file" name="example2" data-error="Ошибка"
-										placeholder="" class="example__input input">
-								</div>
-								<div class="examples__example example">
-									<div class="example__icon"><img src="img/icons/add-big.svg" alt=""></div> <input
-										autocomplete="off" type="file" name="example3" data-error="Ошибка"
-										placeholder="" class="example__input input">
-								</div>
+
 							</div>
 						</div>
 					</form>
@@ -207,7 +190,7 @@
 			<div class="popup__content popup__content_one-more">
 				<button data-close type="button" class="popup__close popup__close_small"><img
 						class="popup__close-image popup__close-image_small" src="img/popup/close.svg" alt=""></button>
-				<div class="popup__body-ptoject">
+				<form class="popup__body-ptoject">
 					<div class="popup__title">Добавить проект</div>
 					<div class="popup__block-items">
 						<div class="popup__project">
@@ -219,9 +202,10 @@
 									class="popup__project-item popup__project-link input"></div>
 						</div>
 					</div>
-					<div class="popup__btn-save"><button type="submit" class="popup__btn-item button">Сохранить</button>
+					<div class="popup__btn-save"><button data-close type="submit"
+							class="popup__btn-item button">Сохранить</button>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
