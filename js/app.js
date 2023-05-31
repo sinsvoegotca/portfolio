@@ -751,30 +751,38 @@
                 }));
             }
         }), 0);
-        const buttonArrow = document.querySelector(".header__button");
-        const blockHidden = document.querySelector(".header__block-items");
-        if (blockHidden) buttonArrow.addEventListener("click", (function(e) {
-            blockHidden.classList.toggle("_active");
+        const buttonSave = document.querySelector(".personal-account__btn");
+        const textAreaEl = document.querySelector(".personal-account__textarea");
+        const inpPersonalAccount = document.querySelectorAll(".personal-account__input");
+        const contacts = document.querySelectorAll(".personal-account__contact");
+        const linkProject = document.querySelector(".personal-account__link");
+        const uploadedFiles = document.querySelectorAll(".example__input");
+        buttonSave.addEventListener("click", (function(e) {
+            console.log(textAreaEl);
+            console.log(inpPersonalAccount);
+            console.log(contacts);
+            console.log(linkProject);
+            console.log(uploadedFiles);
         }));
-        const iconArrow = document.querySelector("._icon-arrow-down");
-        if (iconArrow) iconArrow.addEventListener("click", (function(e) {
-            iconArrow.classList.toggle("_active");
+        const saveProject = document.querySelector(".popup__btn-item");
+        const nameAndLink = document.querySelectorAll(".popup__project-item");
+        saveProject.addEventListener("click", (function(e) {
+            console.log(nameAndLink);
         }));
-        localStorage.setItem("isUserLoggedIn", true);
-        if (localStorage.getItem("isUserLoggedIn")) {
-            var xhr = new XMLHttpRequest;
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4) if (xhr.status === 200) console.log(xhr.responseText); else console.error("Ошибка загрузки файла!");
-            };
-            xhr.open("GET", "//src/html/_header-lk.htm", true);
-            xhr.send();
-        } else {
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4) if (xhr.status === 200) console.log(xhr.responseText); else console.error("Ошибка загрузки файла!");
-            };
-            xhr.open("GET", "//src/html/_header-lk.htm", true);
-            xhr.send();
-        }
+        const textareaElement = document.querySelector(".personal-account__input_text");
+        textareaElement.value = "мини рассказ о себе какое вы дерьмо";
+        const textareaElement2 = document.querySelector(".personal-account__textarea");
+        textareaElement2.value = "Расскажите о том какой вы дерьмовый ублюдок";
+        const ipuntElement = document.querySelector(".personal-account__input_name");
+        ipuntElement.value = "Боже спаси и помоги";
+        const ipuntElement1 = document.querySelector(".personal-account__tg-inp");
+        ipuntElement1.value = "123123123";
+        const ipuntElement2 = document.querySelector(".personal-account__number-inp");
+        ipuntElement2.value = "123123123";
+        const ipuntElement3 = document.querySelector(".popup__project-name");
+        ipuntElement3.value = "Название говна";
+        const ipuntElement4 = document.querySelector(".popup__project-link");
+        ipuntElement4.value = "Ссылка на гавно";
         window["FLS"] = true;
         isWebp();
     })();
