@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: Helvetica;
+  font-family: icons;
   font-display: swap;
-  src: url("../fonts/Helvetica-Regular.woff2") format("woff2"), url("../fonts/Helvetica-Regular.woff") format("woff");
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -17,9 +17,9 @@
 }
 
 @font-face {
-  font-family: icons;
+  font-family: Helvetica;
   font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  src: url("../fonts/Helvetica-Regular.woff2") format("woff2"), url("../fonts/Helvetica-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -43,6 +43,11 @@
 ._icon-dot:before {
   content: "\e900";
   color: #454d5c;
+}
+
+._icon-arrow-down:before {
+  content: "\e901";
+  color: #fff;
 }
 
 * {
@@ -648,12 +653,6 @@ body::after {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.header__logo {
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
 }
 
 .header__logo-image {
@@ -1523,6 +1522,160 @@ body::after {
   padding-bottom: 0.625rem;
 }
 
+.header {
+  position: absolute;
+  z-index: 50;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 4.375rem;
+  padding-bottom: 4rem;
+}
+
+.header__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__logo-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  font-weight: 700;
+  font-size: 1.5625rem;
+  line-height: 1.4;
+}
+
+.header__profile {
+  margin-right: 3.125rem;
+  margin-left: 3.125rem;
+  position: relative;
+}
+
+.header__button {
+  position: relative;
+  padding-right: 0.3125rem;
+}
+
+.header__button._active::before {
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.header__button::before {
+  position: absolute;
+  top: 35%;
+  right: -50%;
+  font-size: 0.9375rem;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.header__block-items {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 10.625rem;
+  height: 6.25rem;
+  background-color: #fff;
+  position: absolute;
+  top: 60%;
+  left: -50%;
+  -webkit-transform: translate(-45%, 0px);
+      -ms-transform: translate(-45%, 0px);
+          transform: translate(-45%, 0px);
+  color: #333;
+  font-size: 1.25rem;
+  border-radius: 6%;
+  row-gap: 0.3125rem;
+}
+
+.header__block-items._active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__block-items::before {
+  content: "";
+}
+
+.header__block-item {
+  border-radius: 10%;
+  position: relative;
+}
+
+.header__block-item:not(:last-child)::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  bottom: -0.4375rem;
+  left: 0;
+  height: 0.125rem;
+  background-color: #84ffc0;
+}
+
+.header__block-item:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu__list {
+  font-weight: 700;
+  font-size: 1.5625rem;
+  line-height: 1.4;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__item_1 {
+  padding-right: 0.625rem;
+}
+
+.menu__link {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.1666666667;
+  position: relative;
+}
+
+.menu__link::before {
+  content: "";
+  bottom: -0.3125rem;
+  width: 0%;
+  height: 0.125rem;
+  background-color: #84ffc0;
+  position: absolute;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.menu__link_gray {
+  color: #AEAEB6;
+}
+
 @media (min-width: 68.75em) and (min-width: 109.375em) {
   .projects__text {
     padding-left: 4.75rem;
@@ -1885,5 +2038,9 @@ body::after {
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
+  }
+
+  .menu__link:hover:before {
+    width: 100%;
   }
 }

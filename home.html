@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230531013010">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230531224425">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,17 +17,22 @@
 		<header class="header">
 			<div class="header__container">
 				<div class="header__body">
-					<a href="home.html" class="header__logo-image"><img src="img/logo.svg" alt=""></a>
+					<a href="" class="header__logo-image"><img src="img/logo.svg" alt=""></a>
 					<div class="header__menu menu">
 						<nav class="menu__body">
 							<ul class="menu__list">
-								<li class="menu__item"><a href="home.html" class="menu__link">Главная</a></li>
-								<li class="menu__item"><a href="" data-popup="#popup"
-										class="menu__link menu__link_gray">Войти</a></li>
-								<li class="menu__item"><a href="" data-popup="#popup_1"
-										class="menu__link menu__link_gray">Регистрация</a></li>
+								<li class="menu__item menu__item_1"><a href="" class="menu__link">Главная</a></li>
 							</ul>
 						</nav>
+						<div class="header__profile">
+							<div class="header__icon-acc">
+								<button type="button" class="header__button _icon-arrow-down"><img src="img/icons/profile.svg" alt=""></button>
+							</div>
+							<div class="header__block-items">
+								<div class="header__block-item"><a href="lk.html" class="header__button-profile">Личный кабинет</a></div>
+								<div class="header__block-item"><button type="button" class="header__button-exit">Выйти</button></div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -36,22 +41,14 @@
 			<div class="page__users">
 				<div class="page__container">
 					<div class="page__decor decor-item">
-						<div data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr data-prlx-dyr
-							class="decor-item__image decor-item__image_1"><img src="img/main-decor/1.svg" alt=""></div>
-						<div data-prlx-cx="10" data-prlx-cy="10" data-prlx-mouse
-							class="decor-item__image decor-item__image_2"><img src="img/main-decor/2.svg" alt=""></div>
-						<div data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr data-prlx-dyr
-							class="decor-item__image decor-item__image_3"><img src="img/main-decor/3.svg" alt=""></div>
-						<div data-prlx-cx="10" data-prlx-cy="10" data-prlx-mouse
-							class="decor-item__image decor-item__image_4"><img src="img/main-decor/4.svg" alt=""></div>
-						<div data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr data-prlx-dyr
-							class="decor-item__image decor-item__image_5"><img src="img/main-decor/5.svg" alt=""></div>
-						<div data-prlx-cx="10" data-prlx-cy="10" data-prlx-mouse
-							class="decor-item__image decor-item__image_6"><img src="img/main-decor/6.svg" alt=""></div>
-						<div data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr data-prlx-dyr
-							class="decor-item__image decor-item__image_7"><img src="img/main-decor/7.svg" alt=""></div>
-						<div data-prlx-cx="10" data-prlx-cy="10" data-prlx-mouse
-							class="decor-item__image decor-item__image_8"><img src="img/main-decor/8.svg" alt=""></div>
+						<div data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr data-prlx-dyr class="decor-item__image decor-item__image_1"><img src="img/main-decor/1.svg" alt=""></div>
+						<div data-prlx-cx="10" data-prlx-cy="10" data-prlx-mouse class="decor-item__image decor-item__image_2"><img src="img/main-decor/2.svg" alt=""></div>
+						<div data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr data-prlx-dyr class="decor-item__image decor-item__image_3"><img src="img/main-decor/3.svg" alt=""></div>
+						<div data-prlx-cx="10" data-prlx-cy="10" data-prlx-mouse class="decor-item__image decor-item__image_4"><img src="img/main-decor/4.svg" alt=""></div>
+						<div data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr data-prlx-dyr class="decor-item__image decor-item__image_5"><img src="img/main-decor/5.svg" alt=""></div>
+						<div data-prlx-cx="10" data-prlx-cy="10" data-prlx-mouse class="decor-item__image decor-item__image_6"><img src="img/main-decor/6.svg" alt=""></div>
+						<div data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-dxr data-prlx-dyr class="decor-item__image decor-item__image_7"><img src="img/main-decor/7.svg" alt=""></div>
+						<div data-prlx-cx="10" data-prlx-cy="10" data-prlx-mouse class="decor-item__image decor-item__image_8"><img src="img/main-decor/8.svg" alt=""></div>
 					</div>
 					<div class="page__block">
 						<div class="page__block-header">
@@ -59,15 +56,80 @@
 								Наши <span>пользователи</span>
 							</h2>
 							<div class="page__search">
-								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
-									placeholder="найти по Фамилии и Имени" class="form__input">
+								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="найти по Фамилии и Имени" class="form__input">
 							</div>
 						</div>
 						<div class="page__body">
+							<a href="" class="page__link-person">
+								<div class="page__image"><img src="" alt=""></div>
+								<div class="page__about-block">
+									<div class="page__info">Янгель Никита Константинович</div>
+									<div class="page__item-projects">
+										<p class="page__about-projects">Мои работы</p>
+										<div class="page__block-items">
+											<div class="page__project">
+												<div class="page__project-icon page__project-icon_1"><img src="img/icons/figma.svg" alt=""></div>
+												<a href="" class="page__project-item">Дизайн сайта-портфолио</a>
+											</div>
+											<div class="page__project">
+												<div class="page__project-icon page__project-icon_2"><img src="img/icons/artstation.svg" alt=""></div>
+												<a href="" class="page__project-item">Логотипы для компаний</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="page__info-person">
+									<div class="page__text">я крутой просто</div>
+									<a href="" class="page__button button">Перейти в профиль</a>
+								</div>
+							</a>
+						</div>
+						<div class="page__body">
+							<a href="" class="page__link-person">
+								<div class="page__image"><img src="" alt=""></div>
+								<div class="page__about-block">
+									<div class="page__info">Зиновьев Вадим Алексеевич</div>
+									<div class="page__item-projects">
+										<p class="page__about-projects">Мои работы</p>
+										<div class="page__block-items">
+											<div class="page__project">
+												<div class="page__project-icon page__project-icon_1"><img src="img/icons/git.svg" alt=""></div>
+												<a href="" class="page__project-item">Проекты на GitHub</a>
+											</div>
 
+										</div>
+									</div>
+								</div>
+								<div class="page__info-person">
+									<div class="page__text">мяу</div>
+									<a href="" class="page__button button">Перейти в профиль</a>
+								</div>
+							</a>
+						</div>
+						<div class="page__body">
+							<a href="" class="page__link-person">
+								<div class="page__image"><img src="" alt=""></div>
+								<div class="page__about-block">
+									<div class="page__info">Лизунов Александр Владимирович</div>
+									<div class="page__item-projects">
+										<p class="page__about-projects">Мои работы</p>
+										<div class="page__block-items">
+											<div class="page__project">
+												<div class="page__project-icon page__project-icon_1"><img src="img/icons/fox.svg" alt=""></div>
+												<a href="" class="page__project-item">Профиль на GitLab</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="page__info-person">
+									<div class="page__text">пишу код</div>
+									<a href="" class="page__button button">Перейти в профиль</a>
+								</div>
+							</a>
 						</div>
 					</div>
 				</div>
+			</div>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -77,24 +139,18 @@
 	<div id="popup" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content">
-				<button data-close type="button" class="popup__close"><img class="popup__close-image"
-						src="img/popup/close.svg" alt=""></button>
+				<button data-close type="button" class="popup__close"><img class="popup__close-image" src="img/popup/close.svg" alt=""></button>
 				<div class="popup__body">
 					<div class="popup__title">
 						Вход в аккаунт
 					</div>
 					<div class="popup__forms forms-popup">
-						<div class="forms-popup__inp forms-popup__mail _icon-dot"><input autocomplete="off" type="text"
-								name="form[]" data-error="Ошибка" placeholder="Логин / Электронная почта"
-								class="forms-popup__input input"></div>
-						<div class="forms-popup__inp forms-popup__password _icon-dot"><input autocomplete="off"
-								type="password" name="form[]" data-error="Ошибка" placeholder="Пароль"
-								class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__mail _icon-dot"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Логин / Электронная почта" class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__password _icon-dot"><input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="Пароль" class="forms-popup__input input"></div>
 					</div>
-					<div class="popup__link-reg">Если у вас нет аккаунта, <a href=""
-							data-popup="#popup_1">зарегестрируйтесь</a>
+					<div class="popup__link-reg">Если у вас нет аккаунта, <a href="" data-popup="#popup_1">зарегестрируйтесь</a>
 					</div>
-					<button type="submit" class="popup__button auth__button">Авторизоваться</button>
+					<button type="submit" class="popup__button">Авторизоваться</button>
 				</div>
 			</div>
 		</div>
@@ -103,33 +159,20 @@
 	<div id="popup_1" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content">
-				<button data-close type="button" class="popup__close"><img class="popup__close-image"
-						src="img/popup/close.svg" alt=""></button>
+				<button data-close type="button" class="popup__close"><img class="popup__close-image" src="img/popup/close.svg" alt=""></button>
 				<div class="popup__body">
 					<div class="popup__title">
 						Регистрация с помощью адреса электронной почты
 					</div>
 					<div class="popup__forms forms-popup">
-						<div class="forms-popup__inp forms-popup__login _icon-dot"><input autocomplete="off" type="text"
-								name="form[]" data-error="Ошибка" placeholder="Логин / Юзернейм"
-								class="forms-popup__input input"></div>
-						<div class="forms-popup__inp forms-popup__mail _icon-dot"><input autocomplete="off" type="text"
-								name="form[]" data-error="Ошибка" placeholder="Электронная почта"
-								class="forms-popup__input input"></div>
-						<div class="forms-popup__inp forms-popup__password _icon-dot"><input autocomplete="off"
-								type="password" name="form[]" data-error="Ошибка" placeholder="Пароль"
-								class="forms-popup__input input"></div>
-						<div class="forms-popup__inp forms-popup__repeat-password _icon-dot"><input autocomplete="off"
-								type="password" name="form[]" data-error="Ошибка" placeholder="Повторите пароль"
-								class="forms-popup__input input"></div>
-						<div class="forms-popup__inp forms-popup__name _icon-dot"><input autocomplete="off" type="text"
-								name="form[]" data-error="Ошибка" placeholder="Имя" class="forms-popup__input input">
-						</div>
-						<div class="forms-popup__inp forms-popup__surname _icon-dot"><input autocomplete="off"
-								type="text" name="form[]" data-error="Ошибка" placeholder="Фамилия"
-								class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__login _icon-dot"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Логин / Юзернейм" class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__mail _icon-dot"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Электронная почта" class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__password _icon-dot"><input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="Пароль" class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__repeat-password _icon-dot"><input autocomplete="off" type="password" name="form[]" data-error="Ошибка" placeholder="Повторите пароль" class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__name _icon-dot"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" class="forms-popup__input input"></div>
+						<div class="forms-popup__inp forms-popup__surname _icon-dot"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Фамилия" class="forms-popup__input input"></div>
 					</div>
-					<button type="submit" class="popup__button register__button">Зарегистрироваться</button>
+					<button type="submit" class="popup__button">Зарегистрироваться</button>
 				</div>
 			</div>
 		</div>
@@ -141,27 +184,21 @@
 	<div id="popup__2" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content popup__content_one-more">
-				<button data-close type="button" class="popup__close popup__close_small"><img
-						class="popup__close-image popup__close-image_small" src="img/popup/close.svg" alt=""></button>
+				<button data-close type="button" class="popup__close popup__close_small"><img class="popup__close-image popup__close-image_small" src="img/popup/close.svg" alt=""></button>
 				<div class="popup__body-ptoject">
 					<div class="popup__title">Добавить проект</div>
 					<div class="popup__block-items">
 						<div class="popup__project">
-							<div class="popup__name-project "><input autocomplete="off" type="text" name="form[]"
-									data-error="Ошибка" placeholder="Название проекта"
-									class="popup__project-item popup__project-name input"></div>
-							<div class="popup__name-project"><input autocomplete="off" type="text" name="form[]"
-									data-error="Ошибка" placeholder="Ссылка на проект"
-									class="popup__project-item popup__project-link input"></div>
+							<div class="popup__name-project "><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Название проекта" class="popup__project-item popup__project-name input"></div>
+							<div class="popup__name-project"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ссылка на проект" class="popup__project-item popup__project-link input"></div>
 						</div>
 					</div>
-					<div class="popup__btn-save"><button type="submit" class="popup__btn-item button">Сохранить</button>
-					</div>
+					<div class="popup__btn-save"><button type="submit" class="popup__btn-item button">Сохранить</button></div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230531013010"></script>
+	<script src="js/app.min.js?_v=20230531224425"></script>
 </body>
 
 </html>
