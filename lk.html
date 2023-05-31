@@ -53,26 +53,25 @@
 						<div data-prlx-cx="10" data-prlx-cy="10" data-prlx-mouse
 							class="decor-item__image decor-item__image_8"><img src="img/main-decor/8.svg" alt=""></div>
 					</div>
-					<form class="user-info personal-account__block">
+					<div class="personal-account__block">
 						<div class="personal-account__title">
 							<h2>Редактирование профиля</h2>
 						</div>
 						<div class="personal-account__about-me">
 							<div class="personal-account__photo">
 								<div class="personal-account__text">Фото</div>
-								<input autocomplete="off" type="file" name="photo" data-error="Ошибка" placeholder=""
+								<input autocomplete="off" type="file" name="form[]" data-error="Ошибка" placeholder=""
 									class="personal-account__input personal-account__input_photo input">
 							</div>
 							<div class="personal-account__info">
 								<div class="personal-account__name">
-									<input autocomplete="off" type="text" id="name" name="name" data-error="Ошибка"
+									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
 										placeholder="Ваше Имя и Фамилия"
 										class="personal-account__input personal-account__input_name input">
 								</div>
 								<div class="personal-account__my-skills">
-									<textarea id="message" name="message"
-										class="personal-account__input personal-account__input_text"
-										placeholder="Кратко о вас"></textarea>
+									<textarea class="personal-account__input personal-account__input_text"
+										placeholder="Кратко о вас" name="" id="" cols="30" rows="10"></textarea>
 								</div>
 							</div>
 							<div class="personal-account__my-projects">
@@ -91,19 +90,23 @@
 						</div>
 						<div class="personal-account__about-me-items">
 							<div class="personal-account__skils">
-								<textarea name="skills" id="skills"
-									class="personal-account__input personal-account__textarea"
-									placeholder="Расскажите более подробно о себе Ваши навыки? - Почему нужны именно вы? - Опыт работы в командах?"
+								<textarea class="personal-account__input personal-account__textarea"
+									placeholder="Расскажите более подробно о себе 
+- Ваши навыки?                                                       -Почему нужны именно вы?                                              - Опыт работы в командах?" name="" id=""
 									cols="30" rows="10"></textarea>
 							</div>
 							<div class="personal-account__my-contacts">
 								<div class="personal-account__yours-contacts">Ваши контакты</div>
-								<div class="personal-account__inp"> <input autocomplete="off" type="text" id="telegram"
-										name="telegram" data-error="Ошибка" placeholder="Ваш Telergarm"
-										class="personal-account__contact personal-account__tg-inp input"> </div>
-								<div class="personal-account__inp"> <input autocomplete="off" type="text" id="phone"
-										name="phone" data-error="Ошибка" placeholder="Ваш номер телефона"
-										class="personal-account__contact personal-account__number-inp input"> </div>
+								<div class="personal-account__inp">
+									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+										placeholder="Ваш Telergarm"
+										class="personal-account__contact personal-account__tg-inp input">
+								</div>
+								<div class="personal-account__inp">
+									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+										placeholder="Ваш номер телефона"
+										class="personal-account__contact personal-account__number-inp input">
+								</div>
 								<button type="submit" class="personal-account__btn button">Сохранить</button>
 							</div>
 						</div>
@@ -111,23 +114,28 @@
 							<div class="examples__title">Примеры работ</div>
 							<div class="examples__body">
 								<div class="examples__example example">
-									<div class="example__icon"><img src="img/icons/add-big.svg" alt=""></div> <input
-										autocomplete="off" type="file" name="example1" data-error="Ошибка"
+									<div class="example__icon"><img src="img/icons/add-big.svg" alt=""></div>
+									<input autocomplete="off" type="file" name="form[]" data-error="Ошибка"
 										placeholder="" class="example__input input">
 								</div>
 								<div class="examples__example example">
-									<div class="example__icon"><img src="img/icons/add-big.svg" alt=""></div> <input
-										autocomplete="off" type="file" name="example2" data-error="Ошибка"
+									<div class="example__icon"><img src="img/icons/add-big.svg" alt=""></div>
+									<input autocomplete="off" type="file" name="form[]" data-error="Ошибка"
 										placeholder="" class="example__input input">
 								</div>
 								<div class="examples__example example">
-									<div class="example__icon"><img src="img/icons/add-big.svg" alt=""></div> <input
-										autocomplete="off" type="file" name="example3" data-error="Ошибка"
+									<div class="example__icon"><img src="img/icons/add-big.svg" alt=""></div>
+									<input autocomplete="off" type="file" name="form[]" data-error="Ошибка"
+										placeholder="" class="example__input input">
+								</div>
+								<div class="examples__example example">
+									<div class="example__icon"><img src="img/icons/add-big.svg" alt=""></div>
+									<input autocomplete="off" type="file" name="form[]" data-error="Ошибка"
 										placeholder="" class="example__input input">
 								</div>
 							</div>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</main>
