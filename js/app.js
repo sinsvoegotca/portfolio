@@ -1269,7 +1269,7 @@ document.querySelector(".auth__button")?.addEventListener("click", async () => {
     const password = document.querySelector(
         ".forms-popup__password > input"
     ).value;
-    const response = await fetch("http://zkno.ru:3070/user/signIn", {
+    const response = await fetch("https://zkno.ru:3070/user/signIn", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -1311,7 +1311,7 @@ document
         const lastName = document.querySelector(
             ".forms-popup__surname > input"
         ).value;
-        const response = await fetch("http://zkno.ru:3070/user/signUp", {
+        const response = await fetch("https://zkno.ru:3070/user/signUp", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -1349,7 +1349,7 @@ function renderUsers(users) {
 
         const image = document.createElement("img");
         console.log(user);
-        image.src = "http://zkno.ru:3070/public/" + user.photo;
+        image.src = "https://zkno.ru:3070/public/" + user.photo;
         image.alt = "";
         pageImage.appendChild(image);
 
@@ -1439,7 +1439,7 @@ function renderUsers(users) {
 }
 
 if (/home\.html/i.test(location.pathname)) {
-    fetch(`http://zkno.ru:3070/user/list?`, {
+    fetch(`https://zkno.ru:3070/user/list?`, {
         headers: {
             authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -1460,7 +1460,7 @@ if (/home\.html/i.test(location.pathname)) {
                 element.remove();
             });
             fetch(
-                `http://zkno.ru:3070/user/list${
+                `https://zkno.ru:3070/user/list${
                     !e.target.value.length ? "" : `?query=${e.target.value}`
                 }`,
                 {
@@ -1482,7 +1482,7 @@ if (/home\.html/i.test(location.pathname)) {
 
 if (/user\.html/i.test(location.pathname)) {
     fetch(
-        `http://zkno.ru:3070/user/${
+        `https://zkno.ru:3070/user/${
             location.search.length ? location.search.slice(1) : ""
         }`,
         {
@@ -1544,7 +1544,7 @@ if (/user\.html/i.test(location.pathname)) {
 
                 // Создаем новый элемент img
                 const newImage = document.createElement("img");
-                newImage.src = "http://zkno.ru:3070/public/" + work;
+                newImage.src = "https://zkno.ru:3070/public/" + work;
                 newImage.alt = "";
 
                 // Добавляем элементы в DOM
@@ -1562,7 +1562,7 @@ function renderLKworks(works) {
         const exampleDiv2 = document.createElement("div");
         exampleDiv2.classList.add("example__img");
         const uploadedImg = document.createElement("img");
-        uploadedImg.src = "http://zkno.ru:3070/public/" + work;
+        uploadedImg.src = "https://zkno.ru:3070/public/" + work;
         uploadedImg.id = "uploadedImg";
 
         exampleDiv2.appendChild(uploadedImg);
@@ -1704,7 +1704,7 @@ if (/lk\.html/i.test(location.pathname)) {
         });
         console.log(works);
         formData.append("works", JSON.stringify(works));
-        const response = await fetch("http://zkno.ru:3070/user/", {
+        const response = await fetch("https://zkno.ru:3070/user/", {
             method: "POST",
             headers: {
                 authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -1717,7 +1717,7 @@ if (/lk\.html/i.test(location.pathname)) {
         } else alert(response.message);
     });
 
-    fetch(`http://zkno.ru:3070/user/`, {
+    fetch(`https://zkno.ru:3070/user/`, {
         headers: {
             authorization: `Bearer ${localStorage.getItem("token")}`,
         },
