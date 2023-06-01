@@ -1773,4 +1773,13 @@ if (/lk\.html/i.test(location.pathname)) {
 
         reader.readAsDataURL(file);
     });
+         function userIsLoggedIn() {
+            return !!localStorage.getItem("token");
+        }
+        const headerLk = document.querySelector(".header-lk");
+        const headerMain = document.querySelector(".header-main");
+        if (!userIsLoggedIn == true) {
+            headerLk.classList.add("_active");
+            headerMain.classList.add("_not-active");
+        }
 }
