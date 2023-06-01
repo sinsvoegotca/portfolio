@@ -1611,9 +1611,11 @@ function renderLKworks(works) {
 }
 
 if (/lk\.html/i.test(location.pathname)) {
-    const form2 = document.querySelector("#popup__2 > div > div > form");
+    const form2 = document.querySelector(
+        "#popup__2 > div > div > form > div.popup__btn-save > button"
+    );
     console.log(form2);
-    form2.addEventListener("submit", (e) => {
+    form2.addEventListener("click", (e) => {
         e.preventDefault();
         const name = document.querySelector(
             "#popup__2 > div > div > form > div.popup__block-items > div > div:nth-child(1) > input"
