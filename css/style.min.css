@@ -1377,47 +1377,6 @@ body::after {
     display: flex;
 }
 
-.about__body::after {
-    content: "";
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    right: 0;
-    width: 51.3020833333%;
-    background-color: #ff0080;
-}
-
-.about__body::before {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: 10;
-    top: 46.265060241%;
-    -webkit-transform: translate(0, 50%);
-    -ms-transform: translate(0, 50%);
-    transform: translate(0, 50%);
-    right: 0;
-    width: 21.6145833333%;
-    height: 16.2962962963%;
-    background: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        from(rgba(255, 255, 255, 0)),
-        to(rgba(255, 255, 255, 0.569))
-    );
-    background: -o-linear-gradient(
-        left,
-        rgba(255, 255, 255, 0) 0,
-        rgba(255, 255, 255, 0.569) 100%
-    );
-    background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0) 0,
-        rgba(255, 255, 255, 0.569) 100%
-    );
-}
-
 .about__info {
     padding-right: 5.6875rem;
     -webkit-box-flex: 1;
